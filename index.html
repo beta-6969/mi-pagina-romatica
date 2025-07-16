@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encuéntrame en esta carta</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background-image: url("fondo.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #fff;
+      padding: 50px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 40px;
+      background: rgba(0, 0, 0, 0.4);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 12px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .love-button {
+      background-color: #ff69b4;
+      border: none;
+      color: white;
+      padding: 15px 25px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .love-button:hover {
+      background-color: #ff1493;
+    }
+
+    .message {
+      margin-top: 30px;
+      font-size: 1.3em;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 15px 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Encuéntrame en esta carta si sientes que no te amo</h1>
+
+  <div class="button-container">
+    <button class="love-button" onclick="showMessage(1)">Si crees que no te amo oprime este botón</button>
+    <button class="love-button" onclick="showMessage(2)">Si crees que te amo oprime este botón</button>
+  </div>
+
+  <div id="message" class="message" style="display: none;"></div>
+
+  <!-- Música de fondo -->
+  <audio autoplay loop hidden>
+    <source src="media-luna.mp3" type="audio/mpeg">
+    Tu navegador no soporta el audio HTML5.
+  </audio>
+
+  <script>
+    function showMessage(option) {
+      const messageDiv = document.getElementById("message");
+      if (option === 1) {
+        messageDiv.textContent = "Tonta, sabes que te equivocaste, ve a la opción 2";
+      } else {
+        messageDiv.textContent = "Cantares 2:2";
+      }
+      messageDiv.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
